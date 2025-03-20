@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 
-function UploadImage() {
-  const [image, setImage] = useState(null);
+function UploadImage({ onUpload }) {
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleImageUpload = (e) => {
-    if (e.target.files.length > 0) {
-      setImage(URL.createObjectURL(e.target.files[0]));
+    let file = e.target.files[0];
+    if (file) {
+      const fileURL = URL.createObjectURL(file);
+      setImagePreview(fileURL);
+      onUpload(fileURL);
     }
   };
 
   return (
-    <div>
-      <input type="file" accept="image/*" onChange={handleImageUpload} />
-      {image && <img src={image} alt="Uploaded" style={{ marginTop: '10px', maxWidth: '300px' }} />}
+    <div className="upload-container">
+      <h2>Upload an Image</h2>
+      
+      {/* Upload Button */}
+      <label className="custom-file-upload">
+        <input type="file" accept="image/*" onChange={handleImageUpload} />
+        Upload Image
+      </label>
+
+      {/* Image Preview */}
+      {imagePreview && <img src={imagePreview} alt="Uploaded Preview" className="preview" />}
     </div>
   );
 }
