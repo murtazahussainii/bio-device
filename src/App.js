@@ -1,23 +1,17 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import UploadImage from './UploadImage'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {/* Add Image Upload Component */}
+      <div style={{ marginTop: '20px' }}>
+        <h2>Upload an Image</h2>
+        <UploadImage />
+      </div>
     </div>
   );
 }
