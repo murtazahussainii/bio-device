@@ -4,12 +4,7 @@
 This repository contains the front-end implementation of a biomedical interface prototype developed using React. It was created for an academic project as part of the *Introduction to Biomedical Engineering* course. The purpose of this project is to simulate the UI of a biomedical monitoring or diagnostic device.
 
 ---
-User Stories:
-User Stories:
-User Stories:
-User Stories:
-User Stories:
-User Stories:
+
 
 ## Project Overview
 
